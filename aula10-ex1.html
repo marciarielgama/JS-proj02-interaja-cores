@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENTOS DOM</title>
+    <style>
+        div#area {
+            font: normal 20pt arial;
+            background:black;
+            color:#fff;
+            width:200px;
+            height:200px;
+            line-height:200px;
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+     <!-- FORMA ANTIGA -> onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()"-->
+    <div id="area">
+        Interaja..
+    </div>
+    <script>
+        // Pode ser também via ESCOPO GLOBAL -> aqui fora!
+        var a = window.document.getElementById('area')
+        a.addEventListener('click', clicar) // EventListener mais usado!
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+
+        function clicar(){
+           // var a = window.document.getElementById('area')
+            a.innerText = 'Clicou'
+            a.style.background = 'red'
+        }
+        function entrar(){
+            // var a = window.document.getElementById('area')
+            a.innerText = 'Entrou'
+            a.style.background = 'blue'
+        }
+        function sair(){
+            // var a = window.document.getElementById('area')
+            a.innerText = 'Saiu'
+            a.style.background = 'purple'
+        }
+    </script>
+</body>
+</html>
